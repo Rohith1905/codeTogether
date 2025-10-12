@@ -1,0 +1,28 @@
+# Project-level ignores
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+target/
+dist/
+build/
+
+# Logs
+*.log
+
+# Environment
+.env.local
+.env.*.local
+
+# Documentation artifacts
+docs/build/
+
+# Docker volumes
+docker/volumes/
