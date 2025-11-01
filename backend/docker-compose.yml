@@ -1,0 +1,52 @@
+services:
+  app:
+    build: .
+    container_name: codetogether-backend
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/codetogether
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - postgres
+    networks:
+      - codetogether-network
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:18-alpine
+    container_name: codetogether-db
+    environment:
+      - POSTGRES_DB=codetogether
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - codetogether-network
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: codetogether-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@codetogether.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - codetogether-network
+    restart: unless-stopped
+
+networks:
+  codetogether-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
