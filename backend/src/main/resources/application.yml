@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: CodeTogether Backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/codetogether
+    username: rohith
+    password: rohith19psql
+
+  jpa:
+    hibernate:
+      ddl-auto: validate   # validate the schema, but do not change it
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    clean-disabled: false
+    clean-on-validation-error: true
+
+server:
+  port: 8081
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  expiration: 86400000 # 24 hours
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: when-authorized
+      show-components: when-authorized
+  health:
+    defaults:
+      enabled: true
+    db:
+      enabled: true
+  info:
+    env:
+      enabled: true
+    java:
+      enabled: true
+    os:
+      enabled: true
+
+info:
+  app:
+    name: CodeTogether Backend
+    description: Real-time collaborative code editing platform
+    version: 1.0.0
+    build:
+      number: ${BUILD_NUMBER:dev}
+      timestamp: ${BUILD_TIMESTAMP:local}
+  team:
+    name: CodeTogether Team
+  contact:
+    email: support@codetogether.com
