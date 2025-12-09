@@ -167,7 +167,7 @@ Before running the application, ensure you have the following installed:
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/codetogether.git
+git clone https://github.com/Rohith1905/codetogether.git
 cd codetogether
 ```
 
@@ -177,7 +177,7 @@ Create a PostgreSQL database:
 
 ```sql
 CREATE DATABASE codetogether;
-CREATE USER rohith WITH PASSWORD 'rohith19psql';
+CREATE USER rohith WITH PASSWORD 'your_password';
 GRANT ALL PRIVILEGES ON DATABASE codetogether TO rohith;
 ```
 
@@ -435,16 +435,6 @@ docker-compose up --build
   - Email: `admin@codetogether.com`
   - Password: `admin`
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -454,8 +444,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **CodeTogether Team**
-- Email: support@codetogether.com
-- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: rohithadiga19@gmail.com
+- GitHub: [@Rohith1905](https://github.com/Rohith1905)
 
 ---
 
