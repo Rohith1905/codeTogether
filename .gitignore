@@ -27,5 +27,4 @@ docs/build/
 # Docker volumes
 docker/volumes/
 
-# Commit planning
-commit_plan.txt
+gitnotes.txt
